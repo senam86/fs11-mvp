@@ -6,4 +6,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+//create user profile
+
+
 module.exports = router;
