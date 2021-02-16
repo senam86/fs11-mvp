@@ -22,7 +22,7 @@ router.get('/:id', function(req, res, next) {
 
 // router.post('/', function())
 
-//create user profile
+
 
 
 module.exports = router;
