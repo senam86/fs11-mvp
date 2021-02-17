@@ -43,17 +43,17 @@ router.post('/', function(req, res, next) {
 //   }
 // });
 
-router.delete('/ :id', function(req, res, next) {
-  const Id = req.params.id;
-  try {
-    db(`DELETE FROM insights WHERE userId=${Id};`).then(results => {
-      db(`SELECT * FROM insights;`);
-      res.send({message: "Entry was deleted"});
-    })
-  } catch (error) {
-    res.status(500).send(err);
-  }
-})
+// router.delete('/ :id', function(req, res, next) {
+//   const Id = req.params.id;
+//   try {
+//     db(`DELETE FROM insights WHERE userId=${Id};`).then(results => {
+//       db(`SELECT * FROM insights;`);
+//       res.send({message: "Entry was deleted"});
+//     })
+//   } catch (error) {
+//     res.status(500).send(err);
+//   }
+// })
  
 
 
