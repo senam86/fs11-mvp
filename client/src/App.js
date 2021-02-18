@@ -7,7 +7,7 @@ export default function App() {
   
 
 const addUser = (firstname, lastname, username, email, currentlocation) => {
-  fetch('/', {
+  fetch('/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
