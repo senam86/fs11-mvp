@@ -4,30 +4,32 @@ import React, { useState } from 'react';
 //start with defining state
 export default function Insights() {
   const [insights, setInsights] = useState([]);
-  // const [post, sharePost] = useState([]);
   
+  // let userId = userId.value;
+  // let title = title.value;
+  // let category = category.value;
+  // let description = description.value;
+  // let ratings = ratings.value;
 
-const addInsight = (title, category, description, ratings) => {
+const addInsight = () => {
   fetch('/insights', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ title, category, description, ratings }),
+    body: JSON.stringify({ userId, title, category, description, ratings }),
   })
     .catch((error) => {
       console.log("Error");
     });
 };
 
-const displayInsight = (title, category, description, ratings) => {
+const displayInsight = () => {
   fetch('/insights', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ title, category, description, ratings }),
-  })
+    method:'GET',
+  }).then(response => response.json()).then(response => {
+    displayInsight(userId, title, category, description, ratings)
+  }) 
     .catch((error) => {
       console.log("Error");
     });
@@ -35,6 +37,7 @@ const displayInsight = (title, category, description, ratings) => {
 
 function handleSubmit(event) {
   event.preventDefault();
+
   let title = event.target.title.value;
   let category = event.target.category.value;
   let description = event.target.description.value;
@@ -49,8 +52,8 @@ function handleSubmit(event) {
 // };
 
 return (
-  <div className='App'>
-  <h1>klfgsdklbvlsdfb</h1>
+  <div className='Insights'>
+  <h1>Welcome !</h1>
   <form onSubmit={handleSubmit}>
     <div>
       <input type='text' name='title' placeholder='title'/>
@@ -69,7 +72,7 @@ return (
     </div>
   <br/>
     <div>
-      <button type='submit' value='submit'/>
+      <input type='submit' value='submit'/>
     </div>
   </form>
 </div>

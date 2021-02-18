@@ -30,32 +30,32 @@ function handleSubmit(event) {
 }
 
 return (
-  <div className='App'>
+  <div className='Users'>
   <h1></h1>
   <form onSubmit={handleSubmit}>
     <div>
       <input type='text' name='firstname' placeholder='firstname'/>
       </div>
-        <br/>
-    <div>
-    <input type='text' name='lastname' placeholder='lastname'/>
-    </div>
     <br/>
-    <div>
-    <input type='text' name='username' placeholder='username'/>
-    </div>
+      <div>
+        <input type='text' name='lastname' placeholder='lastname'/>
+      </div>
     <br/>
-    <div>
-    <input type='text' name='email' placeholder='email'/>
-    </div>
+      <div>
+        <input type='text' name='username' placeholder='username'/>
+      </div>
     <br/>
-    <div>
-    <input type='text' name='currentlocation' placeholder='currentlocation'/>
-    </div>
+      <div>
+        <input type='text' name='email' placeholder='email'/>
+      </div>
     <br/>
-    <label>
-      <input type='submit' value='submit'/>
-    </label>
+      <div>
+        <input type='text' name='currentlocation' placeholder='currentlocation'/>
+      </div>
+    <br/>
+      <label>
+        <input type='submit' value='submit'/>
+      </label>
   </form>
 </div>
 );

@@ -24,8 +24,8 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  const {title, category, description, ratings} = req.body;
-  db(`INSERT INTO insights (title, category, description, ratings) VALUES ("${title}", "${category}", "${description}", "${ratings}");`).then(results => {
+  const {userId, title, category, description, ratings} = req.body;
+  db(`INSERT INTO insights (title, category, description, ratings) VALUES ("${userId}", "${title}", "${category}", "${description}", "${ratings}");`).then(results => {
     res.send("new entry was added");
   })
   .catch((err) => res.status(500).send(err));
