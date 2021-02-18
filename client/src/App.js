@@ -1,62 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Insights from './components/Insights';
+import Userprofile from './components/Userprofile';
 import './App.css';
 
-//start with defining state
 export default function App() {
-  const [users, setUsers] = useState([]);
-  
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/insights">Main Board</Link>
+            </li>
+            <li>
+              <Link to="/userprofile">User Profile</Link>
+            </li>
+          </ul>
+        </nav>
 
-const addUser = (firstname, lastname, username, email, currentlocation) => {
-  fetch('/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ firstname, lastname, username, email, currentlocation }),
-  })
-    .catch((error) => {
-      console.log("Error");
-    });
-};
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let firstname = event.target.firstname.value;
-  let lastname = event.target.lastname.value;
-  let username = event.target.username.value;
-  let email = event.target.email.value;
-  let currentlocation = event.target.currentlocation.value;
-  addUser(firstname, lastname, username, email, currentlocation);
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/insights">
+            <Insights/>
+          </Route>
+          <Route path="/userprofile">
+            <Userprofile/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
-
-return (
-  <div className='App'>
-  <h1></h1>
-  <form onSubmit={handleSubmit}>
-    <div>
-    <input type='text' name='firstname' placeholder='firstname'/>
-    </div>
-    <br/>
-    <div>
-    <input type='text' name='lastname' placeholder='lastname'/>
-    </div>
-    <br/>
-    <div>
-    <input type='text' name='username' placeholder='username'/>
-    </div>
-    <br/>
-    <div>
-    <input type='text' name='email' placeholder='email'/>
-    </div>
-    <br/>
-    <div>
-    <input type='text' name='currentlocation' placeholder='currentlocation'/>
-    </div>
-    <br/>
-    <label>
-      <input type='submit' value='submit'/>
-    </label>
-  </form>
-</div>
-);
-};
