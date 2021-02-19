@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import './App.css';
 
 //start with defining state
 export default function Insights() {
   const [insights, setInsights] = useState([]);
-  
-  // let userId = userId.value;
-  // let title = title.value;
-  // let category = category.value;
-  // let description = description.value;
-  // let ratings = ratings.value;
+  const [insight, setInsight] = useState({
+    title: "",
+    category: "",
+    description: "",
+    ratings: 0,
+  });
+
+  //useEffect will run everytime the data updates inside the component and the first time (no need to reload the page)
+  useEffect(() => {
+
+  })
 
 const addInsight = () => {
   fetch('/insights', {
@@ -17,43 +22,40 @@ const addInsight = () => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ userId, title, category, description, ratings }),
+    body: JSON.stringify(insight),
   })
     .catch((error) => {
       console.log("Error");
     });
 };
 
-const displayInsight = () => {
+const getInsight = () => {
   fetch('/insights', {
     method:'GET',
   }).then(response => response.json()).then(response => {
-    displayInsight(userId, title, category, description, ratings)
+    setInsights(response)
+    // setInsights(response.title, response.category, response.description, response.ratings) //check how data is stored on to do list students
   }) 
     .catch((error) => {
       console.log("Error");
     });
 };
 
+
 function handleSubmit(event) {
   event.preventDefault();
-
-  let title = event.target.title.value;
-  let category = event.target.category.value;
-  let description = event.target.description.value;
-  let ratings = event.target.ratings.value;
-  addInsight(title, category, description, ratings);
-  displayInsight();
+  //event.target is specifically for the form
+  addInsight();
+  // getInsight();
 };
 
-// function handleClick(event) {
-//   event.preventDefault();
-//   displayInsight();
+// const handleChange = ({ target }) => {
+//   setInsight((state) => ({ ...state, [target.name]: target.value }));
 // };
 
 return (
   <div className='Insights'>
-  <h1>Welcome !</h1>
+  <h1>Welcome</h1>
   <form onSubmit={handleSubmit}>
     <div>
       <input type='text' name='title' placeholder='title'/>
@@ -75,6 +77,23 @@ return (
       <input type='submit' value='submit'/>
     </div>
   </form>
+  <div>
+    {/* for every insight in my list, display it on my browser */}
+    {insights.map((element) => (
+      // each element should have a key
+      <div key={insights.id}>
+        <li>
+          {insights.title}
+        </li>
+      </div>
+    ))}
+  </div>
+
+  {/* add place to show my insights
+  use map */}
 </div>
+
+
+
 );
 };

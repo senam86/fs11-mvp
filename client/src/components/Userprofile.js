@@ -19,6 +19,8 @@ const addUser = (firstname, lastname, username, email, currentlocation) => {
     });
 };
 
+
+
 function handleSubmit(event) {
   event.preventDefault();
   let firstname = event.target.firstname.value;
