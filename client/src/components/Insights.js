@@ -13,8 +13,8 @@ export default function Insights() {
 
   //useEffect will run everytime the data updates inside the component and the first time (no need to reload the page)
   useEffect(() => {
-
-  })
+    getInsight();
+  }, []);
 
 const addInsight = () => {
   fetch('/insights', {
@@ -49,28 +49,28 @@ function handleSubmit(event) {
   // getInsight();
 };
 
-// const handleChange = ({ target }) => {
-//   setInsight((state) => ({ ...state, [target.name]: target.value }));
-// };
+const handleChange = ({ target }) => {
+  setInsight((state) => ({ ...state, [target.name]: target.value }));
+};
 
 return (
   <div className='Insights'>
   <h1>Welcome</h1>
   <form onSubmit={handleSubmit}>
     <div>
-      <input type='text' name='title' placeholder='title'/>
+      <input type='text' name='title' placeholder='title' onChange={handleChange}/>
     </div>
   <br/>
     <div>
-      <input type='text' name='category' placeholder='category'/>
+      <input type='text' name='category' placeholder='category' onChange={handleChange}/>
     </div>
   <br/>
     <div>
-      <textarea col={25} row={15} name='description' placeholder='description'/>
+      <textarea col={25} row={15} name='description' placeholder='description' onChange={handleChange}/>
     </div>
   <br/>
     <div>
-      <input type='text' name='ratings' placeholder='ratings'/>
+      <input type='text' name='ratings' placeholder='ratings' onChange={handleChange}/>
     </div>
   <br/>
     <div>
@@ -78,17 +78,23 @@ return (
     </div>
   </form>
   <div>
+    {insights.length ? (
     {/* for every insight in my list, display it on my browser */}
     {insights.map((element) => (
       // each element should have a key
       <div key={insights.id}>
-        <li>
-          {insights.title}
+        <li onClick={() => getInsight(insights.id)}>
+          {insights.title}, {insights.category}, {insights.description}, {insights.ratings}
         </li>
       </div>
     ))}
   </div>
+   ) : ({insight && (
+     <div>
+       {insight.title}, {insight.category}, {insight.description}, {insight.ratings}
+     </div>
 
+   )});
   {/* add place to show my insights
   use map */}
 </div>
@@ -97,3 +103,10 @@ return (
 
 );
 };
+
+{/* {profile && (
+        <div>
+          <h1>{profile.firstname}</h1>
+          <h2>{profile.lastname}</h2>
+        </div>
+      )} */}
