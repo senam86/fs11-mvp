@@ -14,7 +14,7 @@ export default function Insights() {
   //useEffect will run everytime the data updates inside the component and the first time (no need to reload the page)
   useEffect(() => {
     getInsight();
-  }, []);
+  }, []); //everytime I change, refresh the page so I can have my full list again
 
 const addInsight = () => {
   fetch('/insights', {
@@ -77,36 +77,32 @@ return (
       <input type='submit' value='submit'/>
     </div>
   </form>
-  <div>
-    {insights.length ? (
+      <div>
     {/* for every insight in my list, display it on my browser */}
     {insights.map((element) => (
       // each element should have a key
-      <div key={insights.id}>
-        <li onClick={() => getInsight(insights.id)}>
-          {insights.title}, {insights.category}, {insights.description}, {insights.ratings}
+      <div key={element.id}>
+        <li onClick={() => getInsight(element.id)}>
+          {element.title}, {element.category}, {element.description}, {element.ratings}
         </li>
       </div>
     ))}
   </div>
-   ) : ({insight && (
-     <div>
-       {insight.title}, {insight.category}, {insight.description}, {insight.ratings}
-     </div>
+    </div>
+//      ({insight && (
+//      <div>
+//        {insight.title}, {insight.category}, {insight.description}, {insight.ratings}
+//      </div>
 
-   )});
-  {/* add place to show my insights
-  use map */}
-</div>
+//    )})};
+   
+//   {/* add place to show my insights
+//   use map */}
+// </div>
 
 
 
 );
 };
 
-{/* {profile && (
-        <div>
-          <h1>{profile.firstname}</h1>
-          <h2>{profile.lastname}</h2>
-        </div>
-      )} */}
+
