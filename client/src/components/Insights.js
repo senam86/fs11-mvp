@@ -84,7 +84,10 @@ return (
       // each element should have a key
       <div key={element.id}>
         <li onClick={() => getInsight(element.id)}>
-          {element.title}, {element.category}, {element.description}, {element.ratings}
+        <span id="title">{element.title}</span><br/>, 
+        <span>{element.category}</span><br/>, 
+        <span>{element.description}</span><br/>, 
+        <span>{element.ratings}</span><br/>
         </li>
       </div>
     ))}

@@ -19,13 +19,25 @@ con.connect(function(err) {
   console.log("Connected!");
 
   let sql =
-    "CREATE TABLE `users` (`userId` INTEGER NO NULL PRIMARY KEY AUTO_INCREMENT, `firstname` VARCHAR(255), `lastname` VARCHAR(255), `email` VARCHAR(255), `username` VARCHAR(255), `currentlocation`); CREATE TABLE `insights` (`userId` INTEGER NOT NULL, `title` VARCHAR(255), `category` VARCHAR(255), `description` VARCHAR(255), `ratings` VARCHAR(255));";
+    "DROP TABLE IF EXISTS `users`; CREATE TABLE `users` (`userId` INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT, `firstname` VARCHAR(255), `lastname` VARCHAR(255), `email` VARCHAR(255), `username` VARCHAR(255), `currentlocation` VARCHAR(255)); DROP TABLE IF EXISTS `insights`; CREATE TABLE `insights` (`userId` INTEGER NOT NULL, `title` VARCHAR(255), `category` VARCHAR(255), `description` VARCHAR(255), `ratings` INTEGER NOT NULL, `id` INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT);";
+
   con.query(sql, function(err, result) {
     if (err) throw err;
 
-
-    console.log("Closing...");
+    console.log("Table created");
   });
+
+  sql = 
+  "INSERT INTO `users` (firstname, lastname, email, username, currentlocation) VALUES ('Sénamé', 'Agblevon', 'senameagblevon@gmail.com', 'senam86', 'somewhere');"
+  sql+= 
+  "INSERT INTO `users` (firstname, lastname, email, username, currentlocation) VALUES ('Nanette', 'Taylor', 'nanette.taylor@gmail.com', 'nanette', 'Accra');"
+
+  con.query(sql, function(err, result) {
+    if (err) throw err;
+
+    console.log("User added");
+  });
+
 
   con.end();
 });
