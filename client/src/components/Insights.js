@@ -78,7 +78,7 @@ return (
     </div>
   </form>
       <div>
-        {insights && (<h4>Public Board</h4>)}
+        {insights && (<h4>Insights</h4>)}
     {/* for every insight in my list, display it on my browser */}
     {insights.map((element) => (
       // each element should have a key
