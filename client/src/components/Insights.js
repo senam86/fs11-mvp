@@ -34,7 +34,7 @@ const getInsight = () => {
     method:'GET',
   }).then(response => response.json()).then(response => {
     setInsights(response)
-    // setInsights(response.title, response.category, response.description, response.ratings) //check how data is stored on to do list students
+  
   }) 
     .catch((error) => {
       console.log("Error");
@@ -55,8 +55,9 @@ const handleChange = ({ target }) => {
 
 return (
   <div className='Insights'>
-  <h1>Welcome</h1>
-  <form onSubmit={handleSubmit}>
+  <h1 className="title">Welcome</h1>
+  <p>Add your tips here!</p>
+  <form onSubmit={handleSubmit} align='center'>
     <div>
       <input type='text' name='title' placeholder='title' onChange={handleChange}/>
     </div>
@@ -66,7 +67,7 @@ return (
     </div>
   <br/>
     <div>
-      <textarea col={25} row={15} name='description' placeholder='description' onChange={handleChange}/>
+      <textarea col={50} row={15} name='description' placeholder='description' onChange={handleChange}/>
     </div>
   <br/>
     <div>
@@ -74,17 +75,18 @@ return (
     </div>
   <br/>
     <div>
-      <input type='submit' value='submit'/>
+      <input className='submit' type='submit' value='submit'/>
     </div>
   </form>
+  <br/>
       <div>
-        {insights && (<h4>Insights</h4>)}
+        {insights && (<h2 align='center'>Insights</h2>)}
     {/* for every insight in my list, display it on my browser */}
     {insights.map((element) => (
       // each element should have a key
       <div key={element.id}>
-        <li onClick={() => getInsight(element.id)}>
-        <span id="title">{element.title}</span><br/>, 
+        <li onClick={() => getInsight(element.id)} >
+        <span>{element.title}</span><br/>, 
         <span>{element.category}</span><br/>, 
         <span>{element.description}</span><br/>, 
         <span>{element.ratings}</span><br/>
@@ -93,18 +95,6 @@ return (
     ))}
   </div>
     </div>
-//      ({insight && (
-//      <div>
-//        {insight.title}, {insight.category}, {insight.description}, {insight.ratings}
-//      </div>
-
-//    )})};
-   
-//   {/* add place to show my insights
-//   use map */}
-// </div>
-
-
 
 );
 };

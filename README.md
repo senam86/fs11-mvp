@@ -1,6 +1,6 @@
 # fs11-mvp
 
-This app seeks to connect expats together. It is also a community app that will be used to share insights of places already visited to give an idea of what someone could get into => the goal is to rate places.
+This app seeks to connect african expats together. It is a community app that will be used to share insights of places already visited to give an idea of what someone could get into => the goal is to rate places.
 
 ## Setup
 
@@ -8,9 +8,16 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 
 `cd client` and run `yarn` install dependencies related to React (the client).
 
-### Next features
+### Run Your Development Servers
+
+- Run `yarn start` in project directory to start the Express server on port 5000
+- `cd client` and run `yarn start` to start client server in development mode with hot reloading in port 3000.
+- Client is configured so all API calls will be proxied to port 5000 for a smoother development experience.
+
+#### Next features
 
 - join the tables together.
+- add a live messaging feature
 
   # Insights
 
@@ -26,4 +33,3 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 - after creating the profile, clicking submit should send the user to their profile page
 - add authentication to the users
 - add geolocation for the input 'currentlocation'
--

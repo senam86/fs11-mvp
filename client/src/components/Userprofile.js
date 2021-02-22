@@ -33,8 +33,8 @@ function handleSubmit(event) {
 
 return (
   <div className='Users'>
-  <h1></h1>
-  <form onSubmit={handleSubmit}>
+  <h1 className='title'>Create your profile</h1>
+  <form onSubmit={handleSubmit} align='center'>
     <div>
       <input type='text' name='firstname' placeholder='firstname'/>
       </div>
@@ -56,7 +56,7 @@ return (
       </div>
     <br/>
       <label>
-        <input type='submit' value='submit'/>
+        <input className='submit' type='submit' value='submit'/>
       </label>
   </form>
 </div>

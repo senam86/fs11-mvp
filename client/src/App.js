@@ -16,7 +16,7 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/insights">Main Board</Link>
+              <Link to="/insights" >Main Board</Link>
             </li>
             <li>
               <Link to="/userprofile">User Profile</Link>

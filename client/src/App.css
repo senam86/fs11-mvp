@@ -1,7 +1,35 @@
-#title {
-  color: brown;
+.Insights,
+.Userprofile {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+.title {
+  color: rgb(1, 146, 1);
+  text-align: center;
+}
+
+input,
+textarea {
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 0px 0px 5px;
+}
+
+.submit {
+  width: 15%;
+}
+
+p {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .input[type="text"] {
+  text-align: center;
+  cursor: pointer;
+} */
 /* .App {
   text-align: center;
 }
