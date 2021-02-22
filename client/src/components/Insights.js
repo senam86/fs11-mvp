@@ -23,7 +23,7 @@ const addInsight = () => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(insight),
-  })
+  }).then(() => {getInsight()}) //has to be a callback function 
     .catch((error) => {
       console.log("Error");
     });
@@ -78,6 +78,7 @@ return (
     </div>
   </form>
       <div>
+        {insights && (<h4>Public Board</h4>)}
     {/* for every insight in my list, display it on my browser */}
     {insights.map((element) => (
       // each element should have a key
