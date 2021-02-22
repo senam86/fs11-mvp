@@ -31,10 +31,13 @@ router.post('/', function(req, res, next) {
   .catch((err) => res.status(500).send(err));
 });
 
+//doesn't work in Postman 
+//just added const Id because I realized I forgot it and the condition in the mysql command but doesn't work for some reason
 router.put('/ :id', function(req, res, next) {
+  const Id = req.params.id;
   const {firstname, lastname, email, username, currentlocation} = req.body;
   try {
-    db(`UPDATE users SET (firstname, lastname, email, username, currentlocation) VALUES ("${firstname}", "${lastname}", "${email}", "${username}", "${currentlocation}");`).then(results => {
+    db(`UPDATE users SET (firstname, lastname, email, username, currentlocation) VALUES ("${firstname}", "${lastname}", "${email}", "${username}", "${currentlocation}") WHERE userId=${Id};`).then(results => {
       db(`SELECT * FROM users;`);
       res.send(results.data);
     });

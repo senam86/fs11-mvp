@@ -8,10 +8,10 @@ The app currently has 2 pages :
 - User profile
 
 Insights table :
-Basically, if the user want to share some good addresses or events or good experiences, they can just fill up the inputs starting with giving a title, a category (food, cultural events, regular meetups, hairdresser, etc); this category will help in case of a search or to classify all insights; depending on what they will describe, they can add a rating that will be defined later. I forgot to add the location input that will also be helpful in a search and classification.
+Basically, if the user want to share some addresses or events or experiences, they can just fill up the inputs starting with giving a title, a category (food, cultural events, regular meetups, hairdresser, etc); this category will help in case of a search or to classify all insights; depending on what they will describe, they can add a rating that will be defined later. I forgot to add the location input that will also be helpful in a search and classification.
 
 Users table :
-The user will fill up the inputs, which are quite standard. I will add geolocation later and maybe a bio.
+The user will fill up the inputs, which are quite standard.
 
 ## Setup
 
@@ -27,10 +27,12 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 
 ## Next features
 
+### Whole application
+
 - join the tables together.
 - add a live messaging feature
 
-  ### Insights
+### Component Insights
 
 - when an insight is submitted, the public space will be independant from the form (a new page)
 - create dropdown menu in the category input
@@ -38,9 +40,13 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 - add a notation system in the ratings => give a choice from 1 to 5 (5 being the best notation)
 - add comment section for each insight
 
-  ### Userprofile
+### Component Userprofile
 
 - add a picture and bio to the user profile
 - after creating the profile, clicking submit should send the user to their profile page
 - add authentication to the users
 - add geolocation for the input 'currentlocation'
+
+## Bugs
+
+- request put doesn't work in users.js
