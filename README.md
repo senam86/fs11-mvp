@@ -8,11 +8,9 @@ The app currently has 2 pages :
 - User profile
 
 Insights table :
-[Table](docs/insights)
 Basically, if the user want to share some good addresses or events or good experiences, they can just fill up the inputs starting with giving a title, a category (food, cultural events, regular meetups, hairdresser, etc); this category will help in case of a search or to classify all insights; depending on what they will describe, they can add a rating that will be defined later. I forgot to add the location input that will also be helpful in a search and classification.
 
 Users table :
-[Table](docs/users)
 The user will fill up the inputs, which are quite standard. I will add geolocation later and maybe a bio.
 
 ## Setup
