@@ -49,4 +49,8 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 
 ## Bugs
 
-- request put doesn't work in users.js
+- request put doesn't work in users.js, maybe use patch instead (the user shouldn't be able to update everything but maybe location and username?)
+
+## Attachments
+
+- API routes can be found in teh folder docs
