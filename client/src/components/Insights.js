@@ -80,7 +80,7 @@ return (
   </form>
   <br/>
       <div>
-        {insights && (<h2 align='center'>Insights</h2>)}
+        {insights && (<h2 align='center' className='title'>Insights</h2>)}
     {/* for every insight in my list, display it on my browser */}
     {insights.map((element) => (
       // each element should have a key
