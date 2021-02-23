@@ -51,6 +51,8 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 
 - request put doesn't work in users.js, maybe use patch instead (the user shouldn't be able to update everything but maybe location and username?)
 
-## Attachments
+## Attachments (docs folder)
 
-- API routes can be found in teh folder docs
+- API routes
+- user table
+- insights table
