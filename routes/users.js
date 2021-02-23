@@ -31,8 +31,7 @@ router.post('/', function(req, res, next) {
   .catch((err) => res.status(500).send(err));
 });
 
-//doesn't work in Postman 
-//just added const Id because I realized I forgot it and the condition in the mysql command but doesn't work for some reason
+
 router.put('/ :id', function(req, res, next) {
   const Id = req.params.id;
   const {firstname, lastname, email, username, currentlocation} = req.body;
