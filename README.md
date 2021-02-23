@@ -31,6 +31,7 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 
 - join the tables together.
 - add a live messaging feature
+- add a Home page
 
 ### Component Insights
 
@@ -49,7 +50,7 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 
 ## Bugs
 
-- request put doesn't work in users.js, maybe use patch instead (the user shouldn't be able to update everything but maybe location and username?)
+- request put doesn't work in users.js, maybe use patch instead (the user shouldn't be able to update everything but maybe only location and username?)
 
 ## Attachments (docs folder)
 
