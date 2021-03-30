@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const db = require("../model/helper");
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   db(`SELECT * FROM users`) 
@@ -12,7 +13,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
   const Id = req.params.id;
-  // const {id} = req.params;
   try {
   db(`SELECT * FROM users WHERE userId=${Id};`)
     .then(results => {
