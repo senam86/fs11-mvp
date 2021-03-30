@@ -48,15 +48,12 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 - add authentication to the users
 - add geolocation for the input 'currentlocation'
 
-<<<<<<< HEAD
-=======
 ## Bugs
-
-
->>>>>>> 4883e0e2b4af9526107a542a72e526759395e4d9
 
 ## Attachments (docs folder)
 
 - API routes
 - user table
 - insights table
+
+_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
