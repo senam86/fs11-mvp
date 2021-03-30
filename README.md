@@ -1,6 +1,6 @@
 # fs11-mvp
 
-This app seeks to connect african expats together. It is a community app that will be used to share insights of places already visited to give an idea of their expat experience.
+This app seeks to connect expats together. It is a community app that will be used to share insights of places already visited to give an idea of their expat experience.
 
 The app currently has 2 pages :
 
@@ -48,6 +48,12 @@ Run `yarn` in the project folder to install dependencies related to Express (the
 - add authentication to the users
 - add geolocation for the input 'currentlocation'
 
+<<<<<<< HEAD
+=======
+## Bugs
+
+
+>>>>>>> 4883e0e2b4af9526107a542a72e526759395e4d9
 
 ## Attachments (docs folder)
 
